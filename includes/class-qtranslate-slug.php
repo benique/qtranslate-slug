@@ -990,6 +990,7 @@ class QtranslateSlug {
 			$cache_array = array($page);
 			update_post_caches($cache_array, 'page'); // caching query :)
 			wp_cache_delete('qts_page_request');
+			$query['name']=isset($query['name'])?$query['name']:NULL;
 			$query['qts_slug_name'] = $query['name'];
 			unset( $query['name'] );
 			$query['pagename'] = get_page_uri($page);
